@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+.nav_col
+{
+    background-color: #F3F3F3;
+}
+.brand_name{
+    font-family: 'Montserrat', 'normal';
+    font-size:x-large;
+    font-weight: 600;
+    color:#1B0F00;
+    text-decoration:none;
+}
+.nav_tabs
+{
+    font-family: 'Montserrat', 'normal';
+    font-size: large;
+    font-weight: 500;
+    color:#1B0F00;
+    text-decoration: none;
+    margin-left: 25px;
+    margin-right: 25px;
+}
+.username{
+    font-family: 'Montserrat', 'normal';
+    font-size:large;
+    font-weight: 500;
+    color:#1B0F00;
+    text-decoration:none;
+}
