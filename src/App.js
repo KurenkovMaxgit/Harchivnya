@@ -8,7 +8,7 @@ import {
 import Home from "./pages/";
 import Menu from "./pages/menu";
 import News from "./pages/news";
-import SignUp from "./pages/signup";
+import SignUp from "./pages/AccountPage/Accountpage";
 import Cart from "./pages/cart";
  
 function App() {
