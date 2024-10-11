@@ -13,27 +13,11 @@ const Navbar = () => {
             alt="Logo"
             height="48"
             width="48"
-          />{" "}
-          {/* It is recommended to put img size*/}
-          {/* 
-            Added classes `d-none d-md-block`  
-            `d-none `- means hide on all screens
-            `d-md-block` - show on all screens from md and bigger
-            thus hidden on mobile, visible from breakpoint md and bigger
-
-            https://getbootstrap.com/docs/5.0/utilities/display/#hiding-elements
-          */}
+          />
           <span class="fs-4 d-none my-1 d-md-block brand_name">Harchevnya</span>
         </a>
-        {/* 
-          I've added `order-lg-last` class, look here what it does 
-          https://getbootstrap.com/docs/5.0/utilities/flex/#order 
-          Note: it is possible bc parent div uses flexbox layout
-          
-          Also added `ms-auto` to align to the right
-          BTW, I believe padding cannot be set to auto (`px-auto py-auto`), that's only possible for margins
-          */}
-        <div class="d-lg-flex ms-auto order-lg-last">
+        
+        <div class="d-lg-flex ms-auto me-2 order-lg-last">
           <a class="navbar-brand" href="/cart">
             <img
               src="images/Cart Logo.svg"

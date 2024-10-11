@@ -1,0 +1,74 @@
+.account-page {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  h1 {
+    text-align: center;
+    color: #333;
+  }
+  
+  .account-info, .purchase-history, .extra-section {
+    margin-bottom: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+  }
+  
+  .account-info h2, .purchase-history h2, .extra-section h2 {
+    margin-bottom: 10px;
+    justify-content: center;
+    display: flex;
+  }
+  .button-info
+  {
+    display: grid;
+    align-items: center;
+  }
+  
+  .info-item {
+    display: grid;
+    flex-direction: column;
+    gap: 8px;
+    
+  }
+  
+  .purchase-history ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .purchase-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+  
+  button {
+    padding: 10px 20px;
+    border: none;
+    background-color: orange;
+    color: white;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: orange;
+  }
+  .extra-section{
+    align-items: center;
+    justify-content: center;
+  }
+  .extra-section div{
+    display: grid;   
+    padding: 5px;
+  }

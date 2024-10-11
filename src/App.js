@@ -1,10 +1,10 @@
 import React from "react";
 import Navbar from "./components/Navbar";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Home from "./pages/Home";
+import Home from "./pages/Home/home";
 import Menu from "./pages/Menu/menu";
 import News from "./pages/News/news";
-import SignUp from "./pages/Signup/signup";
+import Account from "./pages/Account/Account";
 import Cart from "./pages/Cart/cart";
 
 function App() {
@@ -16,7 +16,7 @@ function App() {
         <Route path="/menu" element={<Menu />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/news" element={<News />} />
-        <Route path="/sign-up" element={<SignUp />} />
+        <Route path="/sign-up" element={<Account />} />
       </Routes>
     </Router>
   );
