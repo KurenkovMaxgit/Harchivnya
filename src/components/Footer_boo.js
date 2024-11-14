@@ -12,29 +12,33 @@ const Footer = () => {
         </a>
         <p class="text-body-secondary">© 2024</p>
       </div>
-
       <div class="col mb-3"></div>
-
       <div class="col mb-3">
         <h5>Контактні дані</h5>
         <ul class="nav flex-column">
           <li class="nav-item mb-2">
             <img src=".\images\X Logo.svg" alt="X logo" />
-            <a href= "X_link_placeholder">X_link_placeholder</a>
+            <a href="/" class="ms-2">
+              X_link_placeholder
+            </a>
           </li>
           <li class="nav-item mb-2">
             <img src=".\images\Insta Icon.svg" alt="Instagram logo" />
-            <a href= "Instagram_link_placeholder">Instagram_link_placeholder</a>
+            <a href="/" class="ms-2">
+              Instagram_link_placeholder
+            </a>
           </li>
           <li class="nav-item mb-2">
             <img src=".\images\YT Icon.svg" alt="You Tube logo" />
-            <a href= "YouTube_link_placeholder">YouTube_link_placeholder</a>
-
+            <a href="/" class="ms-2">
+              YouTube_link_placeholder
+            </a>
           </li>
           <li class="nav-item mb-2">
             <img src=".\images\in Icon.svg" alt="Linked in logo" />
-            <a href= "Linkedin_link_placeholder">Linkedin_link_placeholder</a>
-
+            <a href="/" class="ms-2">
+              Linkedin_link_placeholder
+            </a>
           </li>
         </ul>
       </div>
