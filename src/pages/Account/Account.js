@@ -1,7 +1,18 @@
 import React from "react";
 import "./Account.css"
- 
+import { Navigate } from "react-router-dom";
+import  { useState } from "react";
+
 const Account = () => {
+  const [redirectToHome, setRedirectToHome] = useState(false);
+  
+  const handleRedirect = () => {
+    setRedirectToHome(true);
+  };
+
+  if (redirectToHome) {
+    return <Navigate to="/login" />;
+  }
     return (
     <div className="account-page">
       <div className="account-info">
@@ -22,7 +33,7 @@ const Account = () => {
       </div>
       <div className="extra-section">
         <h2>Additional Info</h2>
-        <div><button>Change Password</button></div>
+        <div><button onClick={handleRedirect}>Change Password</button></div>
         <div><button>Support</button></div>
       </div>
     </div>
