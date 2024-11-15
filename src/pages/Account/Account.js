@@ -1,5 +1,5 @@
 import React from "react";
-import "./Account.css"
+//import "./Account.css"
 import { Navigate } from "react-router-dom";
 import  { useState } from "react";
 
@@ -60,7 +60,7 @@ const Account = () => {
                 </a>
               </div>
               <div class="col">
-                <a href="/" class="btn btn-primary col-12">
+                <a class="btn btn-primary col-12" onClick={handleRedirect}>
                   Change password
                 </a>
               </div>
@@ -74,16 +74,6 @@ const Account = () => {
             </div>
           </div>
         </div>
-      </div>
-      <div className="purchase-history">
-        <h2>Purchase History</h2>
-        <ul>
-        </ul>
-      </div>
-      <div className="extra-section">
-        <h2>Additional Info</h2>
-        <div><button onClick={handleRedirect}>Change Password</button></div>
-        <div><button>Support</button></div>
       </div>
     </div>
   );
