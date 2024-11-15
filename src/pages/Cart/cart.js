@@ -22,13 +22,13 @@ const Cart = () => {
 
   return (
     <div class="container">
-      <h1>Кошик</h1>
+      <h1 className="text-center">Кошик</h1>
       <div class="row col-9 mx-auto row-cols-1 row-cols-sm-1 row-cols-md-1 row-cols-lg-2 row-cols-xl-2">
         <div class="col mb-3">
           <div class="form-floating mb-3">
             <input
               type="text"
-              class="form-control border border-2"
+              class="form-control border border-1 border-black"
               id="floatingInput"
               placeholder=""
             />
@@ -37,7 +37,7 @@ const Cart = () => {
           <div class="form-floating mb-3">
             <input
               type="text"
-              class="form-control border border-2"
+              class="form-control border border-1 border-black"
               id="floatingInput"
               placeholder=""
             />
@@ -46,7 +46,7 @@ const Cart = () => {
           <div class="form-floating mb-3">
             <input
               type="text"
-              class="form-control border border-2"
+              class="form-control border border-1 border-black"
               id="floatingInput"
               placeholder=""
             />
@@ -55,7 +55,7 @@ const Cart = () => {
           <div class="form-floating mb-3">
             <input
               type="text"
-              class="form-control border border-2"
+              class="form-control border border-1 border-black"
               id="floatingInput"
               placeholder=""
             />
@@ -64,7 +64,7 @@ const Cart = () => {
           <div class="form-floating mb-3">
             <input
               type="tel"
-              class="form-control border border-2"
+              class="form-control border border-1 border-black"
               id="floatingInput"
               placeholder=""
             />

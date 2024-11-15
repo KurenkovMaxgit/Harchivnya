@@ -18,7 +18,7 @@ function Element(props) {
   }
 
   return (
-    <div class="row rounded-3 border border-2 mb-3 ">
+    <div class="row rounded-3 border border-1 border-black mb-3 ">
       <div class = "col-2 p-0">
         <img src="images\Cart Logo.svg" alt = "prod.photo" width="54" height="54"/>
       </div>

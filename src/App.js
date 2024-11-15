@@ -10,7 +10,7 @@ import Cart from "./pages/Cart/cart";
 
 function App() {
   return (
-    <Router>
+    <Router className="container">
       <Navbar />
       <Routes>
         <Route exact path="/" element={<Home />} />
