@@ -1,6 +1,18 @@
 import React from "react";
+import "./Account.css"
+import { Navigate } from "react-router-dom";
+import  { useState } from "react";
 
 const Account = () => {
+  const [redirectToHome, setRedirectToHome] = useState(false);
+  
+  const handleRedirect = () => {
+    setRedirectToHome(true);
+  };
+
+  if (redirectToHome) {
+    return <Navigate to="/login" />;
+  }
   return (
     <div class="container">
       <div class="row col-12 mx-auto row-cols-1 row-cols-sm-1 row-cols-md-1 row-cols-lg-2 row-cols-xl-2">
@@ -62,6 +74,16 @@ const Account = () => {
             </div>
           </div>
         </div>
+      </div>
+      <div className="purchase-history">
+        <h2>Purchase History</h2>
+        <ul>
+        </ul>
+      </div>
+      <div className="extra-section">
+        <h2>Additional Info</h2>
+        <div><button onClick={handleRedirect}>Change Password</button></div>
+        <div><button>Support</button></div>
       </div>
     </div>
   );
