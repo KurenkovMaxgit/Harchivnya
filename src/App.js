@@ -8,6 +8,8 @@ import News from "./pages/News/news";
 import Account from "./pages/Account/Account";
 import Cart from "./pages/Cart/cart";
 import Login from "./pages/Login/login";
+import LoginCorrect from "./pages/LoginCorrect/Login";
+import Register from "./pages/Register/Register";
 
 function App() {
   return (
@@ -20,6 +22,8 @@ function App() {
         <Route path="/news" element={<News />} />
         <Route path="/sign-up" element={<Account />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/logincorrect" element={<LoginCorrect />} />
+        <Route path="/register" element={<Register />} />
       </Routes>
       <Footer/>
     </Router>
