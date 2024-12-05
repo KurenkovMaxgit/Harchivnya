@@ -1,7 +1,17 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Card from "./components/card";
+import Menu_fetch from "./Menu_fetch";
 //import Navbar from "../../components/Navbar";
 const Menu = () => {
+  const [items, setItems] = useState([]);
+  useEffect(() => {
+    Menu_fetch().then((res) => {
+      setItems(res);
+    });
+  }, []);
+
+  console.log("menu", items);
+
   return (
     <div class="col-8 mx-auto">
       <ul class="nav mx-auto">
@@ -25,41 +35,15 @@ const Menu = () => {
 
       <div class="container">
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-3 row-cols-xl-4">
-          <div class="col mb-4">
-            <Card
-              img="images/Logo.svg"
-              title="Гамбургер"
-              description="Дуже смачний гамбургер"
-            />
-          </div>
-          <div class="col mb-4">
-            <Card
-              img="images/Logo.svg"
-              title="Гамбургер"
-              description="Дуже смачний гамбургер"
-            />
-          </div>
-          <div class="col mb-4">
-            <Card
-              img="images/Logo.svg"
-              title="Гамбургер"
-              description="Дуже смачний гамбургер"
-            />
-          </div>
-          <div class="col mb-4">
-            <Card
-              img="images/Logo.svg"
-              title="Гамбургер"
-              description="Дуже смачний гамбургер"
-            />
-          </div>
-          <div class="col mb-4">
-            <Card
-              img="images/Logo.svg"
-              title="Гамбургер"
-              description="Дуже смачний гамбургер"
-            />
-          </div>
+          {items.map((item, index) => (
+              <div className="col mb-4" key={item.id}>
+              <Card
+                img={item.imageURL}
+                title={item.name}
+                description={item.description}
+              />
+            </div>
+          ))}
         </div>
       </div>
     </div>

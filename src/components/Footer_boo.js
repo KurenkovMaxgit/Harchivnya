@@ -4,7 +4,7 @@ const Footer = () => {
   return (
     <footer>
       <div className="container-fluid">
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 py-5 my-5 border-top p-2">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-xl-5 py-5 my-5 border-top p-2">
           <div class="col mb-3">
             <a
               href="/"
@@ -14,7 +14,6 @@ const Footer = () => {
             </a>
             <p class="text-body-secondary">© 2024</p>
           </div>
-          <div class="col mb-3"></div>
           <div class="col mb-3">
             <h5>Контактні дані</h5>
             <ul class="nav flex-column">

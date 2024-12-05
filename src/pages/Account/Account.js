@@ -60,9 +60,9 @@ const Account = () => {
                 </a>
               </div>
               <div class="col">
-                <a class="btn btn-primary col-12" onClick={handleRedirect}>
+                <div class="btn btn-primary col-12" onClick={handleRedirect}>
                   Change password
-                </a>
+                </div>
               </div>
             </div>
           </div>
