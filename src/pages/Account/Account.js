@@ -11,7 +11,7 @@ const Account = () => {
   };
 
   if (redirectToHome) {
-    return <Navigate to="/login" />;
+    return <Navigate to="/logincorrect" />;
   }
   return (
     <div class="container">
