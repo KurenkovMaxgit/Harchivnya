@@ -6,7 +6,7 @@ const Footer = () => {
       <div className="container-fluid">
         <div className="mx-auto col-9">
 
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-xl-4 py-5 my-5 border-top p-2">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-xl-3 py-5 my-5 border-top p-2">
           <div class="col mb-3">
             <a
               href="/"
@@ -74,7 +74,7 @@ const Footer = () => {
             </div>
           </div>
 
-          <div class="col mb-3">
+          {/* <div class="col mb-3">
             <h5>Навігація</h5>
             <ul class="nav flex-column">
               <li class="nav-item mb-2">
@@ -93,7 +93,7 @@ const Footer = () => {
                 </a>
               </li>
             </ul>
-          </div>
+          </div> */}
         </div>
       </div>
               </div>
