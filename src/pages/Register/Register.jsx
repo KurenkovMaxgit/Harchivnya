@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { useRegisterMutation } from "../../features/usersApiSlice";
 import { setCredentials } from "../../features/authSlice";
-import styles from "./Register.module.css";
+// import styles from "./Register.module.css";
 
 const Register = () => {
   const [formData, setFormData] = useState({
@@ -45,7 +45,7 @@ const Register = () => {
 
   return (
     <Fragment>
-      <div class=" mx-auto col-9 col-sm-6 col-md-4 col-lg-4 col-xl-3">
+      <div className=" mx-auto col-9 col-sm-6 col-md-4 col-lg-4 col-xl-3">
         <div className="text-center">
           <h1>Register</h1>
         </div>
@@ -53,53 +53,53 @@ const Register = () => {
           <input
             type="text"
             name="name"
-            id="floatingInput"
+            id="name"
             className="form-control border border-1 border-black"
             value={name}
             placeholder=""
             required
             onChange={onChange}
           />
-          <label for="floatingInput">Name</label>
+          <label htmlFor="name">Name</label>
         </div>
         <div className="form-floating mb-3">
           <input
             type="email"
             name="email"
-            id="floatingInput"
+            id="email"
             className="form-control border border-1 border-black"
             value={email}
             placeholder=""
             required
             onChange={onChange}
           />
-          <label for="floatingInput">Email</label>
+          <label htmlFor="email">Email</label>
         </div>
         <div className="form-floating mb-3" >
           <input
             type="password"
             name="password"
-            id="floatingInput"
+            id="password"
             className="form-control border border-1 border-black"
             value={password}
             placeholder=""
             required
             onChange={onChange}
           />
-          <label for="floatingInput">Password</label>
+          <label htmlFor="password">Password</label>
         </div>
         <div className="form-floating mb-3" >
           <input
             type="password"
             name="password2"
-            id="floatingInput"
+            id="passwordConfirm"
             className="form-control border border-1 border-black"
             value={password2}
             placeholder=""
             required
             onChange={onChange}
           />
-          <label for="floatingInput">Confirm password</label>
+          <label htmlFor="passwordConfirm">Confirm password</label>
         </div>
         <div className="mx-auto d-grid col-6">
           <div className="btn btn-primary text-center" onClick={onSubmit}>Create</div>

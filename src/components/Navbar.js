@@ -1,44 +1,44 @@
 import React from "react";
 import "./Navbar.css";
-import Cart from "../pages/Cart/cart_modal";
+import CartContent from "../pages/Cart/cart_content";
 //import { NavLink as Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
     <>
-      <nav class="navbar navbar-expand-lg my-auto nav_col">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="/">
+      <nav className="navbar navbar-expand-lg my-auto nav_col">
+        <div className="container-fluid">
+          <a className="navbar-brand" href="/">
             <img
               src="images/logo.svg"
-              class="rounded float-start "
+              className="rounded float-start "
               alt="Logo"
               height="48"
               width="48"
             />
-            <span class="fs-4 d-none my-1 d-md-block brand_name">
+            <span className="fs-4 d-none my-1 d-md-block brand_name">
               Harchevnya
             </span>
           </a>
-          <div class="d-lg-flex ms-auto me-2 order-lg-last">
+          <div className="d-lg-flex ms-auto me-2 order-lg-last">
             <button
               type="button"
-              class="btn"
+              className="btn"
               data-bs-toggle="modal"
               data-bs-target="#exampleModal"
             >
               <img
                 src="images/Cart Logo.svg"
-                class="rounded float-start mx-auto my-auto"
+                className="rounded float-start mx-auto my-auto"
                 alt="Cart Logo"
                 height="48"
                 width="48"
               />
             </button>
-            <a class="navbar-brand mx-auto my-auto" href="/sign-up">
+            <a className="navbar-brand mx-auto my-auto" href="/sign-up">
               <img
                 src="images/Avatar Placeholder.svg"
-                class="rounded float-start mx-auto my-1 px-auto py-auto"
+                className="rounded float-start mx-auto my-1 px-auto py-auto"
                 height="40"
                 width="40"
                 alt="Avatar Placeholder"
@@ -46,7 +46,7 @@ const Navbar = () => {
             </a>
           </div>
           <button
-            class="navbar-toggler"
+            className="navbar-toggler"
             type="button"
             data-bs-toggle="collapse"
             data-bs-target="#navbarSupportedContent"
@@ -54,36 +54,33 @@ const Navbar = () => {
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
-            <span class="navbar-toggler-icon"></span>
+            <span className="navbar-toggler-icon"></span>
           </button>
           <div
-            class="collapse navbar-collapse my-auto pt-4"
+            className="collapse navbar-collapse my-auto pt-4"
             id="navbarSupportedContent"
           >
-            <ul class="navbar-nav mx-auto my-auto mb-auto mb-lg-4">
-              <li class="nav-item">
+            <ul className="navbar-nav mx-auto my-auto mb-auto mb-lg-4">
+              <li className="nav-item">
                 <a
-                  class="nav-link my-auto mx-3"
-                  className="nav_tabs"
+                  className="nav-link my-auto mx-3 nav_tabs"
                   aria-current="page"
                   href="/"
                 >
                   Головна
                 </a>
               </li>
-              <li class="nav-item">
+              <li className="nav-item">
                 <a
-                  class="nav-link my-auto mx-3"
-                  className="nav_tabs"
+                  className="nav-link my-auto mx-3 nav_tabs"
                   href="/menu"
                 >
                   Меню
                 </a>
               </li>
-              <li class="nav-item">
+              <li className="nav-item">
                 <a
-                  class="nav-link my-auto mx-3"
-                  className="nav_tabs"
+                  className="nav-link my-auto mx-3 nav_tabs"
                   href="/news"
                 >
                   Новини
@@ -94,23 +91,23 @@ const Navbar = () => {
         </div>
       </nav>
       <div
-        class="modal fade"
+        className="modal fade"
         id="exampleModal"
-        tabindex="-1"
+        tabIndex="-1"
         aria-labelledby="exampleModalLabel"
         aria-hidden="true"
       >
-        <div class="modal-dialog modal-xl">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h1 class="modal-title fs-5 mx-auto" id="exampleModalLabel">
+        <div className="modal-dialog modal-xl">
+          <div className="modal-content">
+            <div className="modal-header">
+              <h1 className="modal-title fs-5 mx-auto" id="exampleModalLabel">
                 Кошик
               </h1>
             </div>
-            <div class="modal-body">
-              <Cart/>
+            <div className="modal-body">
+              <CartContent/>
             </div>
-            <div class="modal-footer">
+            <div className="modal-footer">
         <a type="button" className="btn btn-primary col-3 mx-auto" href="/cart">Замовити</a>
       </div>
           </div>

@@ -1,6 +1,6 @@
 import React from "react";
 import Element from "./components/quantity_element";
-
+import CartContent from "./cart_content";
 const Cart = () => {
   const [cartItems, setCartItems] = React.useState([
     { title: "Apple", quantity: 4 },
@@ -21,69 +21,61 @@ const Cart = () => {
   }
 
   return (
-    <div class="container">
+    <div className="container">
       <h1 className="text-center">Кошик</h1>
-      <div class="row col-9 mx-auto row-cols-1 row-cols-sm-1 row-cols-md-1 row-cols-lg-2 row-cols-xl-2">
-        <div class="col mb-3">
-          <div class="form-floating mb-3">
+      <div className="row col-9 mx-auto row-cols-1 row-cols-sm-1 row-cols-md-1 row-cols-lg-2 row-cols-xl-2">
+        <div className="col mb-3">
+          <div className="form-floating mb-3">
             <input
               type="text"
-              class="form-control border border-1 border-black"
+              className="form-control border border-1 border-black"
               id="floatingInput"
               placeholder=""
             />
-            <label for="floatingInput">Адреса</label>
+            <label htmlFor="floatingInput">Адреса</label>
           </div>
-          <div class="form-floating mb-3">
+          <div className="form-floating mb-3">
             <input
               type="text"
-              class="form-control border border-1 border-black"
+              className="form-control border border-1 border-black"
               id="floatingInput"
               placeholder=""
             />
-            <label for="floatingInput">Під'їзд</label>
+            <label htmlFor="floatingInput">Під'їзд</label>
           </div>
-          <div class="form-floating mb-3">
+          <div className="form-floating mb-3">
             <input
               type="text"
-              class="form-control border border-1 border-black"
+              className="form-control border border-1 border-black"
               id="floatingInput"
               placeholder=""
             />
-            <label for="floatingInput">Поверх</label>
+            <label htmlFor="floatingInput">Поверх</label>
           </div>
-          <div class="form-floating mb-3">
+          <div className="form-floating mb-3">
             <input
               type="text"
-              class="form-control border border-1 border-black"
+              className="form-control border border-1 border-black"
               id="floatingInput"
               placeholder=""
             />
-            <label for="floatingInput">Квартира</label>
+            <label htmlFor="floatingInput">Квартира</label>
           </div>
-          <div class="form-floating mb-3">
+          <div className="form-floating mb-3">
             <input
               type="tel"
-              class="form-control border border-1 border-black"
+              className="form-control border border-1 border-black"
               id="floatingInput"
               placeholder=""
             />
-            <label for="floatingInput">Номер телефону</label>
+            <label htmlFor="floatingInput">Номер телефону</label>
           </div>
 
-          <a class="btn btn-primary col-5 d-block mt-3 " href="/menu">
+          <a className="btn btn-primary col-5 d-block mt-3 " href="/menu">
             Назад до меню
           </a>
         </div>
-        <div class="col px-4">
-          {cartItems.map((item, index) => (
-              <Element
-                title={item.title}
-                quantity={item.quantity}
-                onChange={(value) => updateCartItemQty(index, value)}
-              />
-          ))}
-        </div>
+        <CartContent/>
       </div>
     </div>
   );

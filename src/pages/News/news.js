@@ -23,10 +23,10 @@ const News = () => {
   }, []);
 
   return (
-    <div class="container">
-      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-3 row-cols-xl-3 mt-4">
+    <div className="container">
+      <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-3 row-cols-xl-3 mt-4">
           {items.map((item, index) => (
-            <div class="col mb-4">
+            <div className="col mb-4" key={item.id}>
             <Card
               key={item.id}
               img={item.imageURL}
@@ -35,7 +35,7 @@ const News = () => {
             />
             </div>
           ))}
-        <div class="col mb-4">
+        <div className="col mb-4">
           <Card
             img="images/Avatar Placeholder.svg"
             title="Новина"

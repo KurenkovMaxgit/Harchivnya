@@ -4,15 +4,15 @@ import "./home.css"
 const Home = () => {
   return (
     <div>
-      <div class="mx-5 d-flex py-auto px-auto" width="100%" height="100%">
+      <div className="mx-5 d-flex py-auto px-auto" width="100%" height="100%">
         <img
           src="images/food.svg"
-          class=" mx-auto my-auto d-flex img-fluid"
+          className=" mx-auto my-auto d-flex img-fluid"
           alt="food"
         />
       </div>
-      <div class="mx-auto mt-4 col-7 d-center">
-        <h3 class="text-center text-break  mx-auto">
+      <div className="mx-auto mt-4 col-7 d-center">
+        <h3 className="text-center text-break  mx-auto">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sit
           amet sollicitudin velit. Mauris et magna in enim vestibulum convallis
           vel sit amet quam. Quisque sit amet auctor erat, vitae pharetra metus.
@@ -28,7 +28,7 @@ const Home = () => {
         </h3>
       </div>
       <div>
-        <a class="btn btn-primary col-3 d-block mt-3 mx-auto" href="/menu">
+        <a className="btn btn-primary col-3 d-block mt-3 mx-auto" href="/menu">
           Переглянути меню
         </a>
       </div>

@@ -28,7 +28,7 @@ const LoginCorrect = () => {
   };
 
   return (
-    <div class=" mx-auto col-9 col-sm-6 col-md-4 col-lg-4 col-xl-3">
+    <div className=" mx-auto col-9 col-sm-6 col-md-4 col-lg-4 col-xl-3">
       <div className="d-block">
         <div>
           <h1 className="text-center">Login</h1>
@@ -39,21 +39,21 @@ const LoginCorrect = () => {
             <input
               type="email"
               className="form-control border border-1 border-black"
-              id="floatingInput"
+              id="email"
               onChange={(e) => setEmail(e.target.value)}
               placeholder=""
             />
-            <label for="floatingInput">Email</label>
+            <label htmlFor="email">Email</label>
           </div>
           <div className="form-floating mb-3" onSubmit={createUserHandler}>
             <input
               type="password"
               className="form-control border border-1 border-black"
-              id="floatingInput"
+              id="password"
               onChange={(e) => setPassword(e.target.value)}
               placeholder=""
             />
-            <label for="floatingInput">Password</label>
+            <label htmlFor="password">Password</label>
           </div>
           <div className="mx-auto d-grid col-6">
             <a

@@ -18,25 +18,24 @@ function Element(props) {
   }
 
   return (
-    <div class="row rounded-3 border border-1 border-black mb-3 ">
-      <div class = "col-2 p-0">
-        <img src="images\Cart Logo.svg" alt = "prod.photo" width="54" height="54"/>
+    <div className="row rounded-3 border border-1 border-black mb-3 ">
+      <div className = "col-2 p-0">
+        <img src="images\Cart Logo.svg" alt = "prod.photo" width="56" height="56"/>
       </div>
-      <div class="col my-auto">{props.title}</div>
-      <div class="col-auto my-auto p-0">
-        <div class="input-group my-auto">
+      <div className="col my-auto">{props.title}</div>
+      <div className="col-auto my-auto p-0">
+        <div className="input-group my-auto">
           <button
             onClick={decrease}
-            class="btn btn-outline-secondary border border-0"
+            className="btn btn-outline-secondary border border-0"
             type="button"
           >
             <img src="/images/minus.svg" alt="minus" />
           </button>
           <input
             type="number"
-            class="form-control input-box border border-0"
+            className="form-control input-box border border-0"
             min="1"
-            max="10"
             value={quantity}
             onInput={onInputChange}
             aria-label=""
@@ -44,7 +43,7 @@ function Element(props) {
           />
           <button
             onClick={increase}
-            class="btn btn-outline-secondary border border-0"
+            className="btn btn-outline-secondary border border-0"
             type="button"
           >
             <img src="/images/plus.svg" alt="plus" />

@@ -1,15 +1,24 @@
 import React from "react";
+import { useDispatch } from "react-redux";
+import { addItem } from "../../../features/cartSlice";
 
 function Card(props) {
+  const dispatch = useDispatch();
+
   return (
-    <div class="card border border-1 border-black pt-3">
-      <img src={props.img} class="card-img-top" alt="product" />
-      <div class="card-body">
-        <h5 class="card-title">{props.title}</h5>
-        <p class="card-text">{props.description}</p>
-        <a href="/" class="btn btn-primary">
+    <div className="card border border-1 border-black pt-3">
+      <img src={props.img} className="card-img-top" alt="product" />
+      <div className="card-body">
+        <h5 className="card-title">{props.title}</h5>
+        <p className="card-text">{props.description}</p>
+        <button
+          className="btn btn-primary"
+          onClick={() => {
+            dispatch(addItem({ itemId: props.id, quantity: 1 }));
+          }}
+        >
           Додати до кошика
-        </a>
+        </button>
       </div>
     </div>
   );

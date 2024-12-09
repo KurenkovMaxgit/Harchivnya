@@ -13,31 +13,32 @@ const Menu = () => {
   console.log("menu", items);
 
   return (
-    <div class="col-8 mx-auto">
-      <ul class="nav mx-auto">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="/">
+    <div className="col-8 mx-auto">
+      <ul className="nav mx-auto">
+        <li className="nav-item">
+          <a className="nav-link active" aria-current="page" href="/">
             Active
           </a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/">
+        <li className="nav-item">
+          <a className="nav-link" href="/">
             Link
           </a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/">
+        <li className="nav-item">
+          <a className="nav-link" href="/">
             Link
           </a>
         </li>
       </ul>
       {/* <Navbar/> */}
 
-      <div class="container">
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-3 row-cols-xl-4">
+      <div className="container">
+        <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-3 row-cols-xl-4">
           {items.map((item, index) => (
-              <div className="col mb-4" key={item.id}>
+            <div className="col mb-4" key={item.id}>
               <Card
+                id={item.id}
                 img={item.imageURL}
                 title={item.name}
                 description={item.description}
