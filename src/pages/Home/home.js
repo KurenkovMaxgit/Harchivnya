@@ -12,7 +12,7 @@ const Home = () => {
         />
       </div>
       <div className="mx-auto mt-4 col-7 d-center">
-        <h3 className="text-center text-break  mx-auto">
+        <h4 className="text-center text-break  mx-auto">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sit
           amet sollicitudin velit. Mauris et magna in enim vestibulum convallis
           vel sit amet quam. Quisque sit amet auctor erat, vitae pharetra metus.
@@ -25,7 +25,7 @@ const Home = () => {
           sapien. Cras maximus fermentum massa vel dignissim. Aenean fermentum,
           nisl ut commodo elementum, erat enim consectetur quam, ut iaculis
           lorem ex ac lacus.
-        </h3>
+        </h4>
       </div>
       <div>
         <a className="btn btn-primary col-3 d-block mt-3 mx-auto" href="/menu">

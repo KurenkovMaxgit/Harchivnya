@@ -10,8 +10,6 @@ const Menu = () => {
     });
   }, []);
 
-  console.log("menu", items);
-
   return (
     <div className="col-8 mx-auto">
       <ul className="nav mx-auto">

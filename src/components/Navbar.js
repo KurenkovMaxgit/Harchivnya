@@ -71,18 +71,12 @@ const Navbar = () => {
                 </a>
               </li>
               <li className="nav-item">
-                <a
-                  className="nav-link my-auto mx-3 nav_tabs"
-                  href="/menu"
-                >
+                <a className="nav-link my-auto mx-3 nav_tabs" href="/menu">
                   Меню
                 </a>
               </li>
               <li className="nav-item">
-                <a
-                  className="nav-link my-auto mx-3 nav_tabs"
-                  href="/news"
-                >
+                <a className="nav-link my-auto mx-3 nav_tabs" href="/news">
                   Новини
                 </a>
               </li>
@@ -105,11 +99,17 @@ const Navbar = () => {
               </h1>
             </div>
             <div className="modal-body">
-              <CartContent/>
+              <CartContent />
             </div>
             <div className="modal-footer">
-        <a type="button" className="btn btn-primary col-3 mx-auto" href="/cart">Замовити</a>
-      </div>
+              <a
+                type="button"
+                className="btn btn-primary col-3 mx-auto"
+                href="/cart"
+              >
+                Замовити
+              </a>
+            </div>
           </div>
         </div>
       </div>

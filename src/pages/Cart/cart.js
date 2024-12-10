@@ -1,25 +1,6 @@
 import React from "react";
-import Element from "./components/quantity_element";
 import CartContent from "./cart_content";
 const Cart = () => {
-  const [cartItems, setCartItems] = React.useState([
-    { title: "Apple", quantity: 4 },
-    { title: "Coconut", quantity: 3 },
-    { title: "Coconut", quantity: 3 },
-    { title: "Coconut", quantity: 3 },
-    
-  ]);
-
-  function updateCartItemQty(index, value) {
-    const updatedCartItems = cartItems.map((item, i) => {
-      if (index !== i) return item;
-      item.quantity = value;
-      return item;
-    });
-    console.log(updatedCartItems);
-    setCartItems(updatedCartItems);
-  }
-
   return (
     <div className="container">
       <h1 className="text-center">Кошик</h1>
@@ -75,7 +56,7 @@ const Cart = () => {
             Назад до меню
           </a>
         </div>
-        <CartContent/>
+        <CartContent />
       </div>
     </div>
   );

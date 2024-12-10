@@ -31,6 +31,13 @@ const cartSlice = createSlice({
       state.cartItems = filteredItems;
     },
 
+    asyncRemoveItem: async (state, action) => {
+      const filteredItems = state.cartItems.filter(
+        (item) => item.itemId !== action.payload.itemId
+      );
+      state.cartItems = filteredItems;
+    },
+
     setAmount: (state, action) => {
       const itemInCart = state.cartItems.find(
         (item) => item.itemId === action.payload.itemId

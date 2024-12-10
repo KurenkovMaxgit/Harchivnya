@@ -7,14 +7,16 @@ function CartContent(props) {
   const cartItems = useSelector(selectCartItems);
   const dispatch = useDispatch();
   function updateCartItemQty(itemId, value) {
-    if(value=Math.max(1, value))
-    dispatch(setAmount({ itemId: itemId, quantity: value }))
+    if ((value = Math.max(1, value)))
+      dispatch(setAmount({ itemId: itemId, quantity: value }));
   }
 
   return (
     <div className="col px-4">
       {cartItems.map((item, index) => (
         <Element
+          key={item.itemId}
+          id={item.itemId}
           title={item.itemId}
           quantity={item.quantity}
           onChange={(value) => updateCartItemQty(item.itemId, value)}
