@@ -1,6 +1,19 @@
 import React from "react";
 import CartContent from "./cart_content";
+import { placeOrderAsync } from "../../features/cartSlice";
+import { useSelector, useDispatch } from "react-redux";
+
+
+
 const Cart = () => {
+  const dispatch = useDispatch();
+  const items = useSelector((state) => state.cart.cartItems); // Select items from state
+
+  const placeOrder = () => {
+    
+    dispatch(placeOrderAsync(items)); // Dispatch the thunk
+  };
+
   return (
     <div className="container">
       <h1 className="text-center">Кошик</h1>
@@ -51,12 +64,23 @@ const Cart = () => {
             />
             <label htmlFor="floatingInput">Номер телефону</label>
           </div>
-
-          <a className="btn btn-primary col-5 d-block mt-3 " href="/menu">
-            Назад до меню
-          </a>
         </div>
         <CartContent />
+        <div className=" col">
+          <div className="row">
+            <div className="col">
+              <a className="btn btn-primary col-12 d-block" href="/menu">
+                Назад до меню
+              </a>
+            </div>
+            <div className="col">
+              <button className="btn btn-primary col-12 d-block"
+              onClick={()=>placeOrder()}>
+                Замовити
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );

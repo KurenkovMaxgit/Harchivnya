@@ -21,7 +21,7 @@ const LoginCorrect = () => {
       const res = await login({ email, password }).unwrap();
       console.log(res);
       dispatch(setCredentials(res));
-      navigate("/");
+      navigate("/sign-up");
     } catch (error) {
       console.log("error");
     }
@@ -56,13 +56,13 @@ const LoginCorrect = () => {
             <label htmlFor="password">Password</label>
           </div>
           <div className="mx-auto d-grid col-6">
-            <a
+            <button
               className="btn btn-primary text-center"
               disabled={isLoading}
-              type="submit"
+              onClick={createUserHandler}
             >
               SingIn
-            </a>
+            </button>
           </div>
           <p className="text-center">
             <Link to="/register">create an account</Link>

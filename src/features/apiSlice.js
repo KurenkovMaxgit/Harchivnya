@@ -19,5 +19,6 @@ export const apiSlice = createApi({
   baseQuery,
   credentials: "include", // This allows server to set cookies
   tagTypes: ["Product", "Order", "News", "User"],
-  endpoints: (builder) => ({}),
+  endpoints: (builder) => ({
+  }),
 });
