@@ -1,13 +1,13 @@
 import React from "react";
 import CartContent from "./cart_content";
-import { placeOrderAsync } from "../../features/cartSlice";
-import { useSelector, useDispatch } from "react-redux";
+import { placeOrderAsync, selectCartItems } from "../../features/cartSlice";
+import { useDispatch } from "react-redux";
 
 
 
 const Cart = () => {
   const dispatch = useDispatch();
-  const items = useSelector((state) => state.cart.cartItems); // Select items from state
+  const items = selectCartItems; // Select items from state
 
   const placeOrder = () => {
     

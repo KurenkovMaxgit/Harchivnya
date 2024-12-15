@@ -1,11 +1,11 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import placeOrder from "../api/placeOrder";
 import axios from "axios";
 
 const initialState = {
-  cartItems: [],
-  status: "idle",
-  error: null,
+  order: {
+    totalPrice: 0,
+    orderItems: [],
+  },
 };
 
 const cartSlice = createSlice({
@@ -13,7 +13,7 @@ const cartSlice = createSlice({
   initialState,
   reducers: {
     addItem: (state, action) => {
-      const itemIsInCart = state.cartItems.find(
+      const itemIsInCart = state.order.orderItems.find(
         (item) => item.itemId === action.payload.itemId
       );
       if (itemIsInCart) {
@@ -25,25 +25,25 @@ const cartSlice = createSlice({
         itemId: action.payload.itemId,
         quantity: action.payload.quantity,
       };
-      state.cartItems.push(obj);
+      state.order.orderItems.push(obj);
     },
 
     removeItem: (state, action) => {
-      const filteredItems = state.cartItems.filter(
+      const filteredItems = state.order.orderItems.filter(
         (item) => item.itemId !== action.payload.itemId
       );
-      state.cartItems = filteredItems;
+      state.order = filteredItems;
     },
 
     asyncRemoveItem: async (state, action) => {
-      const filteredItems = state.cartItems.filter(
+      const filteredItems = state.order.orderItems.filter(
         (item) => item.itemId !== action.payload.itemId
       );
-      state.cartItems = filteredItems;
+      state.order = filteredItems;
     },
 
     setAmount: (state, action) => {
-      const itemInCart = state.cartItems.find(
+      const itemInCart = state.order.find(
         (item) => item.itemId === action.payload.itemId
       );
       if (!itemInCart) {
@@ -55,7 +55,7 @@ const cartSlice = createSlice({
     },
 
     clearCart: (state) => {
-      state.cartItems = [];
+      state.order = [];
     },
   },
 
@@ -91,17 +91,18 @@ export const placeOrderAsync = createAsyncThunk(
     try {
       const payload = {
         totalPrice: 0,
+        adress: "skldfhjbh",
         orderItems: cartItems,
       };
       console.log(payload);
       const response = await axios.post(
-        "https://localhost:7048/api/Order",
+        "https://localhost:7048/api/Order?id=9",
         payload,
         {
           headers: {
             "Content-Type": "application/json",
           },
-          withCredentials: true, 
+          withCredentials: true,
         }
       );
       return response.data;
@@ -112,7 +113,7 @@ export const placeOrderAsync = createAsyncThunk(
   }
 );
 
-export const selectCartItems = (state) => state.cart.cartItems;
+export const selectCartItems = (state) => state.cart.order.orderItems;
 export const selectStatus = (state) => state.counter.status;
 
 export const { addItem, removeItem, setAmount, clearCart } = cartSlice.actions;
