@@ -1,6 +1,6 @@
-import { Fragment, useState, useEffect } from "react";
+import { Fragment, useState } from "react";
 //import { toast } from "react-toastify";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { useRegisterMutation } from "../../features/usersApiSlice";
 import { setCredentials } from "../../features/authSlice";
@@ -18,7 +18,7 @@ const Register = () => {
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const [register, { isLoading }] = useRegisterMutation();
+  const [register] = useRegisterMutation();
 
   const onChange = (e) => {
     setFormData((prevState) => ({
@@ -106,7 +106,7 @@ const Register = () => {
         </div>
         <p className="text-center">
           Already have an account?
-          <Link to="/LoginCorrect">Log in</Link>
+          <Link to="/login">Log in</Link>
         </p>
       </div>
     </Fragment>

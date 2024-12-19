@@ -1,17 +1,23 @@
 import React from "react";
 //import "./Account.css"
 import { Navigate } from "react-router-dom";
-import  { useState } from "react";
+import { useState } from "react";
+import { useSelector } from "react-redux";
+import { selectToken } from "../../features/authSlice";
 
 const Account = () => {
   const [redirectToHome, setRedirectToHome] = useState(false);
-  
+
+  const token = useSelector(selectToken);
+
   const handleRedirect = () => {
     setRedirectToHome(true);
   };
-
+  if (token === null) {
+    return <Navigate to="/login" />;
+  }
   if (redirectToHome) {
-    return <Navigate to="/logincorrect" />;
+    return <Navigate to="/login" />;
   }
   return (
     <div className="container">
@@ -45,20 +51,18 @@ const Account = () => {
                 </div>
               </div>
             </div>
-            <div className="row row-cols-2">
-              </div>
+            <div className="row row-cols-2"></div>
+          </div>
+          <div className="row cols-2">
+            <div className="col pt-3">
+              <a href="/" className="btn btn-primary col-12">
+                Edit information
+              </a>
             </div>
-            <div className="row cols-2">
-
-              <div className="col pt-3">
-                <a href="/" className="btn btn-primary col-12">
-                  Edit information
-                </a>
+            <div className="col pt-3">
+              <div className="btn btn-primary col-12" onClick={handleRedirect}>
+                Change password
               </div>
-              <div className="col pt-3">
-                <div className="btn btn-primary col-12" onClick={handleRedirect}>
-                  Change password
-                </div>
             </div>
           </div>
         </div>

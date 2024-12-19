@@ -9,8 +9,13 @@ const authSlice = createSlice({
   initialState,
   reducers: {
     setCredentials: (state, action) => {
-      state.token = action.payload.token;
-      localStorage.setItem("token", action.payload.token)
+      if (action.payload.token) {
+        state.token = action.payload.token;
+        localStorage.setItem("token", action.payload.token);
+      } else {
+        state.token = null;
+        localStorage.removeItem("token");
+      }
     },
     logout: (state, action) => {
       state.token = null;
@@ -18,6 +23,8 @@ const authSlice = createSlice({
     },
   },
 });
+
+export const selectToken = (state) => state.auth.token;
 
 export const { setCredentials, logout } = authSlice.actions;
 

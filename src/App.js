@@ -7,11 +7,15 @@ import Menu from "./pages/Menu/menu";
 import News from "./pages/News/news";
 import Account from "./pages/Account/Account";
 import Cart from "./pages/Cart/cart";
-import Login from "./pages/Login/login";
 import LoginCorrect from "./pages/LoginCorrect/Login";
 import Register from "./pages/Register/Register";
+import { useDispatch } from "react-redux";
+import { getUserDetails } from "./features/usersAPISliceAxios";
 
 function App() {
+  const dispatch = useDispatch();
+  dispatch(getUserDetails());
+
   return (
     <Router className="container">
       <Navbar />
@@ -21,11 +25,10 @@ function App() {
         <Route path="/cart" element={<Cart />} />
         <Route path="/news" element={<News />} />
         <Route path="/sign-up" element={<Account />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/logincorrect" element={<LoginCorrect />} />
+        <Route path="/login" element={<LoginCorrect />} />
         <Route path="/register" element={<Register />} />
       </Routes>
-      <Footer/>
+      <Footer />
     </Router>
   );
 }

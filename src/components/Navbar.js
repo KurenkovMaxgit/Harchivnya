@@ -1,9 +1,25 @@
 import React from "react";
 import "./Navbar.css";
-import CartContent from "../pages/Cart/cart_content";
-//import { NavLink as Link } from "react-router-dom";
+import { selectToken } from "../features/authSlice";
+import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import CartModal from "../pages/Cart/Cart_modal";
 
+//import { NavLink as Link } from "react-router-dom";
 const Navbar = () => {
+  const navigate = useNavigate();
+
+  const token = useSelector(selectToken);
+
+  const getUserHandler = async (e) => {
+    e.preventDefault();
+    if (token === null) {
+      navigate("/login");
+    } else {
+      navigate("/sign-up");
+    }
+  };
+
   return (
     <>
       <nav className="navbar navbar-expand-lg my-auto nav_col">
@@ -17,7 +33,7 @@ const Navbar = () => {
               width="48"
             />
             <span className="fs-4 d-none my-1 d-md-block brand_name">
-              Harchevnya
+              Harchivnya
             </span>
           </a>
           <div className="d-lg-flex ms-auto me-2 order-lg-last">
@@ -35,7 +51,10 @@ const Navbar = () => {
                 width="48"
               />
             </button>
-            <a className="navbar-brand mx-auto my-auto" href="/sign-up">
+            <button
+              className="btn navbar-brand mx-auto my-auto"
+              onClick={(e) => getUserHandler(e)}
+            >
               <img
                 src="images/Avatar Placeholder.svg"
                 className="rounded float-start mx-auto my-1 px-auto py-auto"
@@ -43,7 +62,7 @@ const Navbar = () => {
                 width="40"
                 alt="Avatar Placeholder"
               />
-            </a>
+            </button>
           </div>
           <button
             className="navbar-toggler"
@@ -84,36 +103,102 @@ const Navbar = () => {
           </div>
         </div>
       </nav>
-      <div
-        className="modal fade"
-        id="exampleModal"
-        tabIndex="-1"
-        aria-labelledby="exampleModalLabel"
-        aria-hidden="true"
-      >
-        <div className="modal-dialog modal-xl">
-          <div className="modal-content">
-            <div className="modal-header">
-              <h1 className="modal-title fs-5 mx-auto" id="exampleModalLabel">
-                Кошик
-              </h1>
-            </div>
-            <div className="modal-body">
-              <CartContent />
-            </div>
+      <CartModal />
+    </>
+  );
+};
+
+/* function IsRegisered() {
+  const dispatch = useDispatch();
+  const token = selectToken();
+
+  const getUserHandler = async (e) => {
+    e.preventDefault();
+    console.log(selectToken());
+    const res = await dispatch(getUserDetails());
+    if (selectToken() == null || getUserDetails.rejected.match(res)) {
+      return (
+        <div>
+          <div>
             <div className="modal-footer">
+              <div className="col-6 text-center">Ви не увійшли в аккаунт</div>
+              <div className="col">
+                <a
+                  type="button"
+                  className="btn btn-primary col-12 mx-auto"
+                  href="/register"
+                >
+                  Створити
+                </a>
+              </div>
+              <div className="col">
+                <a
+                  type="button"
+                  className="btn btn-primary col-12 mx-auto"
+                  href="/login"
+                >
+                  Увійти
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      );
+    } else {
+      return (
+        <div className="modal-footer">
+          <a
+            type="button"
+            className="btn btn-primary col-3 mx-auto"
+            href="/cart"
+          >
+            Замовити
+          </a>
+        </div>
+      );
+    }
+  };
+
+  return getUserHandler();
+
+  if (
+    getUserDetails.rejected.match(async () => await dispatch(getUserDetails()))
+  ) {
+    return (
+      <div className="modal-footer">
+        <a type="button" className="btn btn-primary col-3 mx-auto" href="/cart">
+          Замовити
+        </a>
+      </div>
+    );
+  } else {
+    return (
+      <div>
+        <div>
+          <div className="modal-footer">
+            <div className="col-6 text-center">Ви не увійшли в аккаунт</div>
+            <div className="col">
               <a
                 type="button"
-                className="btn btn-primary col-3 mx-auto"
-                href="/cart"
+                className="btn btn-primary col-12 mx-auto"
+                href="/register"
               >
-                Замовити
+                Створити
+              </a>
+            </div>
+            <div className="col">
+              <a
+                type="button"
+                className="btn btn-primary col-12 mx-auto"
+                href="/login"
+              >
+                Увійти
               </a>
             </div>
           </div>
         </div>
       </div>
-    </>
-  );
-};
+    );
+  }
+} */
 export default Navbar;
