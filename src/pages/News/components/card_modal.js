@@ -20,13 +20,14 @@ function NewsModal(props) {
           <div className="modal-body">
             {props.description}
           </div>
+          
           <div className="modal-footer">
             <a
               type="button"
               className="btn btn-primary col-3 mx-auto"
               href="/cart"
             >
-              Замовити
+              Деталі
             </a>
           </div>
         </div>

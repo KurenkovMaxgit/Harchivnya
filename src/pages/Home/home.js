@@ -3,7 +3,7 @@ import "./home.css"
 
 const Home = () => {
   return (
-    <div>
+    <div className="mt-4">
       <div className="mx-5 d-flex py-auto px-auto" width="100%" height="100%">
         <img
           src="images/food.svg"

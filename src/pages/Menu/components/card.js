@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import { addItem } from "../../../features/cartSlice";
+import { addItem, setOrder } from "../../../features/cartSlice";
 
 function Card(props) {
   const dispatch = useDispatch();
@@ -11,14 +11,17 @@ function Card(props) {
       <div className="card-body">
         <h5 className="card-title">{props.title}</h5>
         <p className="card-text">{props.description}</p>
-        <button
-          className="btn btn-primary"
-          onClick={() => {
-            dispatch(addItem({ itemId: props.id, quantity: 1 }));
-          }}
-        >
-          Додати до кошика
-        </button>
+        <div className="row">
+          <h5 className="col my-auto">{props.price}₴</h5>
+          <button
+            className="btn btn-primary col-7"
+            onClick={() => {
+              dispatch(addItem({ itemId: props.id, quantity: 1 }));
+            }}
+          >
+            До кошика
+          </button>
+        </div>
       </div>
     </div>
   );
