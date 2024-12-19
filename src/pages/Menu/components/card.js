@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import { addItem, setOrder } from "../../../features/cartSlice";
+import { addItem } from "../../../features/cartSlice";
 
 function Card(props) {
   const dispatch = useDispatch();

@@ -2,7 +2,6 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { selectToken } from "../../features/authSlice";
 import CartContent from "./cart_content";
-import { setOrder } from "../../features/cartSlice";
 
 const CartModal = () => {
   const token = useSelector(selectToken);
@@ -33,7 +32,6 @@ const CartModal = () => {
                 type="button"
                 className="btn btn-primary col-3 mx-auto"
                 href="/cart"
-                onClick={() => dispatch(setOrder())}
               >
                 Замовити
               </a>

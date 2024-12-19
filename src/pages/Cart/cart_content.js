@@ -3,9 +3,11 @@ import Element from "./components/quantity_element";
 import { selectCartItems, setAmount } from "../../features/cartSlice";
 import { useSelector, useDispatch } from "react-redux";
 
-function CartContent(props) {
+function CartContent() {
   const cartItems = useSelector(selectCartItems);
+
   const dispatch = useDispatch();
+
   function updateCartItemQty(itemId, value) {
     if ((value = Math.max(1, value)))
       dispatch(setAmount({ itemId: itemId, quantity: value }));
