@@ -1,7 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
-import { useSelector } from "react-redux";
-import { selectItems } from "./productSlice";
+import { getAllItems } from "./productSlice";
 
 const initialState = {
   order: {
@@ -80,6 +79,15 @@ const cartSlice = createSlice({
       .addCase(placeOrderAsync.rejected, (state, action) => {
         state.status = "failed";
         state.error = action.payload; // Save the error
+      })
+      .addCase(getAllItems.fulfilled, (state, action) => {
+        const allProducts = action.payload;
+        let totalPrice = 0;
+        for (const item of state.order.orderItems) {
+          const product = allProducts.find((product) => product.id === item.itemId);
+          totalPrice += product.price * item.quantity;
+        }
+        state.order.totalPrice = totalPrice;
       });
   },
 });
@@ -129,6 +137,7 @@ export const {
   clearCart,
   setAddress,
   setTotalPrice,
+  dummy,
 } = cartSlice.actions;
 
 export default cartSlice.reducer;
