@@ -1,3 +1,8 @@
+.quantity-input {
+  width: 130px;
+  height: fit-content;
+}
+
 .input-box::-webkit-inner-spin-button,
 .input-box::-webkit-outer-spin-button {
   -webkit-appearance: none;

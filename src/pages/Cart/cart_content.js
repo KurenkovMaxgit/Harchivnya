@@ -1,28 +1,29 @@
 import React from "react";
-import Element from "./components/quantity_element";
-import { selectCartItems, setAmount } from "../../features/cartSlice";
-import { useSelector, useDispatch } from "react-redux";
+import CartItem from "./components/cart_item";
+import { selectCartItems } from "../../features/cartSlice";
+import { useSelector } from "react-redux";
+import { selectItems } from "../../features/productSlice";
 
 function CartContent() {
   const cartItems = useSelector(selectCartItems);
+  const allProducts = useSelector(selectItems);
 
-  const dispatch = useDispatch();
-
-  function updateCartItemQty(itemId, value) {
-    if ((value = Math.max(1, value)))
-      dispatch(setAmount({ itemId: itemId, quantity: value }));
-  }
+  const itemDetails = cartItems.map((cartItem) => {
+    const product = allProducts.find(
+      (product) => product.id === cartItem.itemId
+    );
+    return {
+      ...cartItem,
+      id: cartItem.itemId, // just for convenience
+      name: product?.name ?? undefined, // Fallback for missing products
+      price: product?.price ?? undefined,
+    };
+  });
 
   return (
-    <div className="col px-4">
-      {cartItems.map((item, index) => (
-        <Element
-          key={item.itemId}
-          id={item.itemId}
-          title={item.itemId}
-          quantity={item.quantity}
-          onChange={(value) => updateCartItemQty(item.itemId, value)}
-        />
+    <div className="col">
+      {itemDetails.map((item) => (
+        <CartItem key={item.itemId} item={item} />
       ))}
     </div>
   );

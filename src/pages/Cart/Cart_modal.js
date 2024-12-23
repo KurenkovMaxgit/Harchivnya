@@ -1,11 +1,10 @@
 import React from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { selectToken } from "../../features/authSlice";
 import CartContent from "./cart_content";
 
 const CartModal = () => {
   const token = useSelector(selectToken);
-  const dispatch = useDispatch();
 
   return (
     <div

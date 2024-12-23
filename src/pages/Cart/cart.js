@@ -1,6 +1,6 @@
 import { useState } from "react";
 import CartContent from "./cart_content";
-import { placeOrderAsync, setAddress } from "../../features/cartSlice";
+import { placeOrderAsync, selectTotalPrice, setAddress } from "../../features/cartSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { selectToken } from "../../features/authSlice";
 import { Navigate } from "react-router-dom";
@@ -42,7 +42,7 @@ const Cart = () => {
       console.log(res);
     } catch (error) {}
   };
-
+  const totalPrice = useSelector(selectTotalPrice);
   const token = useSelector(selectToken);
   if (token === null) {
     return <Navigate to="/login" />;
@@ -113,12 +113,20 @@ const Cart = () => {
             </div>
           </form>
         </div>
-        <CartContent />
-        <div className=" col">
+        <div className="overflow-auto" style={{ maxHeight: "355px" }}>
+          <CartContent />
+        </div>
+
+        <div className="col mt-3">
+          <div className="text-end mb-3">
+            <h5 className="fw">
+              Загальна ціна: {totalPrice.toFixed(2)}₴
+            </h5>
+          </div>
           <div className="row">
             <div className="col">
-              <a className="btn btn-primary col-12 d-block" href="/menu">
-                Назад до меню
+              <a className="btn btn-primary col-12" href="/menu">
+                До меню
               </a>
             </div>
             <div className="col">
