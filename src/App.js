@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer_boo";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
@@ -9,13 +9,20 @@ import Account from "./pages/Account/Account";
 import Cart from "./pages/Cart/cart";
 import LoginCorrect from "./pages/LoginCorrect/Login";
 import Register from "./pages/Register/Register";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { getUserDetails } from "./features/usersAPISliceAxios";
+import { getAllItems } from "./features/productSlice";
+import { selectStatus } from "./features/cartSlice";
 
 function App() {
   const dispatch = useDispatch();
   dispatch(getUserDetails());
-
+  const storeStatus = useSelector(selectStatus)
+useEffect(() => {
+    if(storeStatus === "idle") {
+      dispatch(getAllItems())
+    }
+  }, [storeStatus, dispatch]);
   return (
     <Router className="container">
       <Navbar />

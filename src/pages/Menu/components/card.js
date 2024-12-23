@@ -14,12 +14,12 @@ function Card(props) {
         <div className="row">
           <h5 className="col my-auto">{props.price}₴</h5>
           <button
-            className="btn btn-primary col-7"
+            className="btn btn-primary col-6"
             onClick={() => {
               dispatch(addItem({ itemId: props.id, quantity: 1 }));
             }}
           >
-            До кошика
+            У кошик
           </button>
         </div>
       </div>

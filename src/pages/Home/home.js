@@ -4,32 +4,21 @@ import "./home.css"
 const Home = () => {
   return (
     <div className="mt-4">
-      <div className="mx-5 d-flex py-auto px-auto" width="100%" height="100%">
+      <div className="d-flex py-auto px-auto" width="100%" height="100%">
         <img
           src="images/food.svg"
-          className=" mx-auto my-auto d-flex img-fluid"
+          className=" mx-auto my-auto d-flex img-fluid px-2"
           alt="food"
         />
       </div>
-      <div className="mx-auto mt-4 col-7 d-center">
-        <h4 className="text-center text-break  mx-auto">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sit
-          amet sollicitudin velit. Mauris et magna in enim vestibulum convallis
-          vel sit amet quam. Quisque sit amet auctor erat, vitae pharetra metus.
-          Fusce molestie leo non vulputate laoreet. Aliquam suscipit massa nisl,
-          vitae volutpat sapien suscipit nec. Vestibulum hendrerit, metus a
-          maximus tincidunt, arcu dui lacinia purus, id elementum lorem augue et
-          dui. Quisque vitae diam erat. Donec tortor orci, laoreet at fermentum
-          id, ultrices at purus. Aenean quis nunc leo. Vivamus sit amet lacinia
-          dolor. Ut sem elit, consequat eget dolor sit amet, ornare lobortis
-          sapien. Cras maximus fermentum massa vel dignissim. Aenean fermentum,
-          nisl ut commodo elementum, erat enim consectetur quam, ut iaculis
-          lorem ex ac lacus.
-        </h4>
+      <div className="mx-auto mt-4 col-8 d-center">
+        <p className="text-center text-break mx-auto fs-3">
+        Ласкаво просимо до «Harchivnya» – місця, де кожна страва створена з любов’ю та турботою про вас. У нашому меню ви знайдете соковиті бургери з ніжним м’ясом та оригінальними соусами, ароматну піцу з хрусткою скоринкою і різноманітними начинками, а також широкий вибір напоїв, які стануть ідеальним доповненням до вашої трапези. Ми прагнемо дарувати вам не лише смачну їжу, а й приємні емоції в затишній атмосфері нашого ресторану. Завітайте до нас, щоб отримати гастрономічне задоволення, яке запам’ятається надовго!
+        </p>
       </div>
       <div>
         <a className="btn btn-primary col-3 d-block mt-3 mx-auto" href="/menu">
-          Переглянути меню
+          До меню
         </a>
       </div>
     </div>

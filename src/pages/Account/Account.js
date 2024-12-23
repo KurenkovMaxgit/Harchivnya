@@ -25,10 +25,10 @@ const Account = () => {
         <div className="col mb-3">
           <div className="card">
             <div className="card-body">
-              <h2 className="mb-3">Personal Information</h2>
+              <h2 className="mb-3">Персональна інформація</h2>
               <div className="row">
                 <div className="col-sm-6">
-                  <p className="mb-2">Full Name</p>
+                  <p className="mb-2">Повне ім'я</p>
                 </div>
                 <div className="col-sm-6">
                   <p className="text-muted mb-0">Johnatan Smith</p>
@@ -36,7 +36,7 @@ const Account = () => {
               </div>
               <div className="row">
                 <div className="col-sm-6">
-                  <p className="mb-2">Email</p>
+                  <p className="mb-2">Ел. пошта</p>
                 </div>
                 <div className="col-sm-6">
                   <p className="text-muted mb-0">example@example.com</p>
@@ -44,7 +44,7 @@ const Account = () => {
               </div>
               <div className="row">
                 <div className="col-sm-6">
-                  <p className="mb-2">Phone</p>
+                  <p className="mb-2">Телефон</p>
                 </div>
                 <div className="col-sm-6">
                   <p className="text-muted mb-0">(097) 234-5678</p>
@@ -56,12 +56,12 @@ const Account = () => {
           <div className="row cols-2">
             <div className="col pt-3">
               <a href="/" className="btn btn-primary col-12">
-                Edit information
+                Змінити інформацію
               </a>
             </div>
             <div className="col pt-3">
               <div className="btn btn-primary col-12" onClick={handleRedirect}>
-                Change password
+                Змінити пароль
               </div>
             </div>
           </div>
@@ -69,7 +69,7 @@ const Account = () => {
         <div className="col mb-3">
           <div className="card">
             <div className="card-body">
-              <h2>Purchase History</h2>
+              <h2>Історія замовлень</h2>
             </div>
           </div>
         </div>

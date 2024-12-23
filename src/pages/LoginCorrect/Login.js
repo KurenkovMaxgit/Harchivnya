@@ -30,7 +30,7 @@ const LoginCorrect = () => {
     <div className=" mx-auto col-9 col-sm-6 col-md-4 col-lg-4 col-xl-3">
       <div className="d-block">
         <div>
-          <h1 className="text-center">Login</h1>
+          <h1 className="text-center">Логін</h1>
           <div
             className="form-floating mb-3 d-block"
             onSubmit={createUserHandler}
@@ -42,7 +42,7 @@ const LoginCorrect = () => {
               onChange={(e) => setEmail(e.target.value)}
               placeholder=""
             />
-            <label htmlFor="email">Email</label>
+            <label htmlFor="email">Ел. пошта</label>
           </div>
           <div className="form-floating mb-3" onSubmit={createUserHandler}>
             <input
@@ -52,7 +52,7 @@ const LoginCorrect = () => {
               onChange={(e) => setPassword(e.target.value)}
               placeholder=""
             />
-            <label htmlFor="password">Password</label>
+            <label htmlFor="password">Пароль</label>
           </div>
           <div className="mx-auto d-grid col-6">
             <button
@@ -60,11 +60,11 @@ const LoginCorrect = () => {
               disabled={isLoading}
               onClick={createUserHandler}
             >
-              SingIn
+              Увйти
             </button>
           </div>
           <p className="text-center">
-            <Link to="/register">create an account</Link>
+            <Link to="/register">Створити аккаунт</Link>
           </p>
         </div>
       </div>

@@ -22,25 +22,25 @@ const Footer = () => {
               <li className="nav-item mb-2">
                 <img src=".\images\X Logo.svg" alt="X logo" />
                 <a href="/" className="ms-2">
-                  X_link_placeholder
+                  X_link
                 </a>
               </li>
               <li className="nav-item mb-2">
                 <img src=".\images\Insta Icon.svg" alt="Instagram logo" />
                 <a href="/" className="ms-2">
-                  Instagram_link_placeholder
+                  Instagram_link
                 </a>
               </li>
               <li className="nav-item mb-2">
                 <img src=".\images\YT Icon.svg" alt="You Tube logo" />
                 <a href="/" className="ms-2">
-                  YouTube_link_placeholder
+                  YouTube_link
                 </a>
               </li>
               <li className="nav-item mb-2">
                 <img src=".\images\in Icon.svg" alt="Linked in logo" />
                 <a href="/" className="ms-2">
-                  Linkedin_link_placeholder
+                  Linkedin_link
                 </a>
               </li>
             </ul>

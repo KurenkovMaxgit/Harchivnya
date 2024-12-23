@@ -47,7 +47,7 @@ const Register = () => {
     <Fragment>
       <div className=" mx-auto col-9 col-sm-6 col-md-4 col-lg-4 col-xl-3">
         <div className="text-center">
-          <h1>Register</h1>
+          <h1>Реєстрація</h1>
         </div>
         <div className="form-floating mb-3">
           <input
@@ -60,7 +60,7 @@ const Register = () => {
             required
             onChange={onChange}
           />
-          <label htmlFor="name">Name</label>
+          <label htmlFor="name">Ім'я</label>
         </div>
         <div className="form-floating mb-3">
           <input
@@ -73,9 +73,9 @@ const Register = () => {
             required
             onChange={onChange}
           />
-          <label htmlFor="email">Email</label>
+          <label htmlFor="email">Ел. пошта</label>
         </div>
-        <div className="form-floating mb-3" >
+        <div className="form-floating mb-3">
           <input
             type="password"
             name="password"
@@ -86,9 +86,9 @@ const Register = () => {
             required
             onChange={onChange}
           />
-          <label htmlFor="password">Password</label>
+          <label htmlFor="password">Придумайте пароль</label>
         </div>
-        <div className="form-floating mb-3" >
+        <div className="form-floating mb-3">
           <input
             type="password"
             name="password2"
@@ -99,14 +99,16 @@ const Register = () => {
             required
             onChange={onChange}
           />
-          <label htmlFor="passwordConfirm">Confirm password</label>
+          <label htmlFor="passwordConfirm">Підтвердіть пароль</label>
         </div>
         <div className="mx-auto d-grid col-6">
-          <div className="btn btn-primary text-center" onClick={onSubmit}>Create</div>
+          <div className="btn btn-primary text-center" onClick={onSubmit}>
+            Create
+          </div>
         </div>
         <p className="text-center">
-          Already have an account?
-          <Link to="/login">Log in</Link>
+          Вже маєте аккаунт?
+          <Link to="/login">Увійти</Link>
         </p>
       </div>
     </Fragment>
