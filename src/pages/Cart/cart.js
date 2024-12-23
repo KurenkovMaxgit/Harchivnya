@@ -1,13 +1,16 @@
 import { useState } from "react";
 import CartContent from "./cart_content";
-import { placeOrderAsync, selectTotalPrice, setAddress } from "../../features/cartSlice";
+import {
+  placeOrderAsync,
+  selectTotalPrice,
+  setAddress,
+} from "../../features/cartSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { selectToken } from "../../features/authSlice";
 import { Navigate } from "react-router-dom";
 
 const Cart = () => {
   const dispatch = useDispatch();
-
   const placeOrder = () => {
     dispatch(setAddress(addressStr()));
     dispatch(placeOrderAsync()); // Dispatch the thunk
@@ -119,9 +122,7 @@ const Cart = () => {
 
         <div className="col mt-3">
           <div className="text-end mb-3">
-            <h5 className="fw">
-              Загальна ціна: {totalPrice.toFixed(2)}₴
-            </h5>
+            <h5 className="fw">Загальна ціна: {totalPrice.toFixed(2)}₴</h5>
           </div>
           <div className="row">
             <div className="col">

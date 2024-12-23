@@ -7,7 +7,7 @@ import Menu from "./pages/Menu/menu";
 import News from "./pages/News/news";
 import Account from "./pages/Account/Account";
 import Cart from "./pages/Cart/cart";
-import LoginCorrect from "./pages/LoginCorrect/Login";
+import LoginCorrect from "./pages/Login/Login";
 import Register from "./pages/Register/Register";
 import { useDispatch, useSelector } from "react-redux";
 import { getUserDetails } from "./features/usersAPISliceAxios";
@@ -17,12 +17,14 @@ import { selectStatus } from "./features/cartSlice";
 function App() {
   const dispatch = useDispatch();
   dispatch(getUserDetails());
-  const storeStatus = useSelector(selectStatus)
-useEffect(() => {
-    if(storeStatus === "idle") {
-      dispatch(getAllItems())
+  const storeStatus = useSelector(selectStatus);
+  
+  useEffect(() => {
+    if (storeStatus === "idle") {
+      dispatch(getAllItems());
     }
   }, [storeStatus, dispatch]);
+
   return (
     <Router className="container">
       <Navbar />

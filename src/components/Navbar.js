@@ -3,7 +3,7 @@ import "./Navbar.css";
 import { selectToken } from "../features/authSlice";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import CartModal from "../pages/Cart/Cart_modal";
+import CartModal from "../pages/Cart/cart_modal";
 
 //import { NavLink as Link } from "react-router-dom";
 const Navbar = () => {
