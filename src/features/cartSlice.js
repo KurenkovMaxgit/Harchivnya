@@ -1,5 +1,7 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
+import { useSelector } from "react-redux";
+import { selectItems } from "./productSlice";
 
 const initialState = {
   order: {
@@ -9,6 +11,7 @@ const initialState = {
       ? JSON.parse(localStorage.getItem("orderItems"))
       : [],
   },
+  status: "idle",
 };
 
 const cartSlice = createSlice({
@@ -58,6 +61,9 @@ const cartSlice = createSlice({
 
     clearCart: (state) => {
       state.order.orderItems = [];
+    },
+    setTotalPrice: (state, action) => {
+      state.order.totalPrice = action.payload;
     },
   },
 
@@ -111,7 +117,9 @@ export const placeOrderAsync = createAsyncThunk(
 
 export const selectCartItems = (state) => state.cart.order.orderItems;
 
-export const selectStatus = (state) => state.counter.status;
+export const selectTotalPrice = (state) => state.cart.order.totalPrice;
+
+export const selectStatus = (state) => state.cart.status;
 
 export const {
   addItem,
@@ -120,6 +128,7 @@ export const {
   setAmount,
   clearCart,
   setAddress,
+  setTotalPrice,
 } = cartSlice.actions;
 
 export default cartSlice.reducer;
@@ -138,10 +147,23 @@ export const localStorageCartMiddleware = (store) => (next) => (action) => {
     return result;
   }
 
+  // Skip is action sets total price to avoid recursion
+  if (action.type.startsWith("cart/setTotalPrice")) {
+    return result;
+  }
+
   // Get order items from the store state and write them in local storage
   const state = store.getState();
   const items = state.cart.order.orderItems;
   localStorage.setItem("orderItems", JSON.stringify(items));
 
+  // Calculate total price
+  const allProducts = state.product.items;
+  let totalPrice = 0;
+  for (const item of items) {
+    const product = allProducts.find((product) => product.id === item.itemId);
+    totalPrice += product.price * item.quantity;
+  }
+  store.dispatch(setTotalPrice(totalPrice));
   return result;
 };
