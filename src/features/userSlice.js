@@ -37,7 +37,7 @@ const userSlice = createSlice({
         const addressDetails = (action.payload.adress ?? ", , , ").split(", ");
         const userDetails = {
           id: action.payload.id,
-          name: action.payload.name,
+          name: action.payload.userName,
           email: action.payload.email,
           phone: action.payload.phoneNumber,
           adress: {
@@ -109,7 +109,7 @@ export const setUserDetails = createAsyncThunk(
       const state = getState().user.userDetails;
       const payload = {
         id: state.id,
-        name: state.name,
+        userName: state.name,
         email: state.email,
         phoneNumber: state.phone,
         adress:

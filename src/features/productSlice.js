@@ -7,6 +7,7 @@ import axios from "axios";
 
 const initialState = {
   items: [],
+  filteredItems: [],
   status: "idle",
 };
 
@@ -39,7 +40,7 @@ const productSlice = createSlice({
       })
       .addCase(getItemsByType.fulfilled, (state, action) => {
         state.status = "succeeded";
-        state.items = action.payload; // Clear cart on successful order placement
+        state.filteredItems = action.payload; // Clear cart on successful order placement
       })
       .addCase(getItemsByType.rejected, (state, action) => {
         state.status = "failed";
@@ -101,6 +102,7 @@ export const getItemsByType = createAsyncThunk(
 );
 
 export const selectItems = (state) => state.product.items;
+export const selectFilteredItems = (state) => state.product.filteredItems;
 export const selectStatus = (state) => state.product.status;
 export const selectById = createSelector(
   [selectItems, (_, itemId) => itemId],

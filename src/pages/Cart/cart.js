@@ -7,18 +7,20 @@ import {
 } from "../../features/cartSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { selectToken } from "../../features/authSlice";
-import { Navigate } from "react-router-dom";
+import { Navigate, useNavigate } from "react-router-dom";
 import { selectDetails } from "../../features/userSlice";
 
 const Cart = () => {
   const dispatch = useDispatch();
   const select = useSelector(selectDetails);
+  const navigate = useNavigate();
   useEffect(() => {
-  setAddressValues(select.adress)
+    setAddressValues(select.adress);
   }, [select]);
   const placeOrder = () => {
     dispatch(setAddress(addressStr()));
     dispatch(placeOrderAsync()); // Dispatch the thunk
+    navigate("/");
   };
 
   const [address, setAddressValues] = useState({
