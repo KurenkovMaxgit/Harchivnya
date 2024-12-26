@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { useLoginMutation } from "../../features/usersApiSlice";
 import { setCredentials } from "../../features/authSlice";
+import { getUserDetails } from "../../features/userSlice";
 //import { toast } from "react-toastify";
 
 const LoginCorrect = () => {
@@ -20,6 +21,7 @@ const LoginCorrect = () => {
       const res = await login({ email, password }).unwrap();
       console.log(res);
       dispatch(setCredentials(res));
+      dispatch(getUserDetails())
       navigate("/sign-up");
     } catch (error) {
       console.log("error");
