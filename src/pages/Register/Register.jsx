@@ -1,5 +1,5 @@
 import { Fragment, useState } from "react";
-//import { toast } from "react-toastify";
+import { Bounce, toast } from "react-toastify";
 import { useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { useRegisterMutation } from "../../features/usersApiSlice";
@@ -30,7 +30,17 @@ const Register = () => {
   const onSubmit = async (e) => {
     e.preventDefault();
     if (password !== password2) {
-      //    toast.error("Password do not match");
+          toast.error("Password do not match", {
+            position: "bottom-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: false,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+            transition: Bounce,
+            });
     } else {
       try {
         const userData = { name, email, password };
@@ -38,7 +48,7 @@ const Register = () => {
         dispatch(setCredentials(res));
         navigate("/");
       } catch (error) {
-        //     toast.error(error.data);
+             toast.error(error.data);
       }
     }
   };
@@ -112,6 +122,7 @@ const Register = () => {
         </p>
       </div>
     </Fragment>
+    
   );
 };
 

@@ -10,9 +10,12 @@ import Cart from "./pages/Cart/cart";
 import LoginCorrect from "./pages/Login/Login";
 import Register from "./pages/Register/Register";
 import { useDispatch, useSelector } from "react-redux";
-import { getUserDetails } from "./features/usersAPISliceAxios";
+import { getUserDetails } from "./features/userSlice";
 import { getAllItems } from "./features/productSlice";
 import { selectStatus } from "./features/cartSlice";
+import PasswordChange from "./pages/Login/passwordChange";
+import { ToastContainer } from 'react-toastify';
+
 
 function App() {
   const dispatch = useDispatch();
@@ -27,6 +30,7 @@ function App() {
 
   return (
     <Router className="container">
+      <ToastContainer />
       <Navbar />
       <Routes>
         <Route exact path="/" element={<Home />} />
@@ -36,6 +40,7 @@ function App() {
         <Route path="/sign-up" element={<Account />} />
         <Route path="/login" element={<LoginCorrect />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/passwordChange" element={<PasswordChange />} />
       </Routes>
       <Footer />
     </Router>

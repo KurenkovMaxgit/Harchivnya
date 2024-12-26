@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import CartContent from "./cart_content";
 import {
   placeOrderAsync,
@@ -8,9 +8,14 @@ import {
 import { useDispatch, useSelector } from "react-redux";
 import { selectToken } from "../../features/authSlice";
 import { Navigate } from "react-router-dom";
+import { selectDetails } from "../../features/userSlice";
 
 const Cart = () => {
   const dispatch = useDispatch();
+  const select = useSelector(selectDetails);
+  useEffect(() => {
+  setAddressValues(select.adress)
+  }, [select]);
   const placeOrder = () => {
     dispatch(setAddress(addressStr()));
     dispatch(placeOrderAsync()); // Dispatch the thunk
@@ -66,7 +71,7 @@ const Cart = () => {
                 placeholder=""
                 onChange={onChange}
               />
-              <label htmlFor="street">Адреса</label>
+              <label htmlFor="street">Вулиця</label>
             </div>
             <div className="form-floating mb-3">
               <input
@@ -78,7 +83,7 @@ const Cart = () => {
                 placeholder=""
                 onChange={onChange}
               />
-              <label htmlFor="floatingInput">Під'їзд</label>
+              <label htmlFor="floatingInput">Будинок</label>
             </div>
             <div className="form-floating mb-3">
               <input

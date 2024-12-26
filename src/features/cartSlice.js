@@ -1,6 +1,7 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 import { getAllItems } from "./productSlice";
+import { Bounce, toast } from "react-toastify";
 
 const initialState = {
   order: {
@@ -22,7 +23,17 @@ const cartSlice = createSlice({
         (item) => item.itemId === action.payload.itemId
       );
       if (itemIsInCart) {
-        console.error("trying to add duplicate item to the cart");
+        toast.info('Вже у кошику', {
+          position: "bottom-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: false,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+          transition: Bounce,
+          });
         return;
       }
 
@@ -31,6 +42,17 @@ const cartSlice = createSlice({
         quantity: action.payload.quantity,
       };
       state.order.orderItems.push(obj);
+      toast.success('Додано до кошика', {
+        position: "bottom-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: false,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        transition: Bounce,
+        });
     },
 
     removeItem: (state, action) => {
@@ -40,6 +62,17 @@ const cartSlice = createSlice({
       );
       // Set filtered items to the state
       state.order.orderItems = filteredItems;
+      toast.info('Продукт видалено', {
+        position: "bottom-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: false,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        transition: Bounce,
+        });
     },
 
     setAmount: (state, action) => {
@@ -114,13 +147,35 @@ export const placeOrderAsync = createAsyncThunk(
       .catch((error) => {
         if (error.response && error.response.status === 401) {
           console.error("Unauthorized! Please log in again.");
+          toast.danger('Ви не зареєстровані', {
+            position: "bottom-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: false,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+            transition: Bounce,
+          });
           //dispatch(logout());
         } else {
           console.error("Error:", error.message);
         }
       });
-    return response.data;
-  }
+      toast.success('Замовлення створено', {
+        position: "bottom-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: false,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        transition: Bounce,
+        });
+      return response.data;
+    }
 );
 
 export const selectCartItems = (state) => state.cart.order.orderItems;
