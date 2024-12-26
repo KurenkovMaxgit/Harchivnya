@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import Card from "./components/card";
-import { getAllItems, selectItems, selectStatus, selectById } from "../../features/productSlice";
+import { getAllItems, selectItems, selectStatus, selectById, getItemsByType } from "../../features/productSlice";
 import { useDispatch, useSelector } from "react-redux";
 const Menu = () => {
   const dispatch = useDispatch();
@@ -17,19 +17,24 @@ const Menu = () => {
     <div className="col-8 mx-auto">
       <ul className="nav mx-auto">
         <li className="nav-item">
-          <a className="nav-link active btn" aria-current="page" href="/" >
-            Active
-          </a>
+          <button className="nav-link text-primary" onClick={()=> dispatch(getAllItems())} >
+            Все
+          </button>
         </li>
         <li className="nav-item">
-          <a className="nav-link" href="/">
-            Link
-          </a>
+          <button className="nav-link text-primary" onClick={()=> dispatch(getItemsByType("pizza"))}>
+            Піца
+          </button>
         </li>
         <li className="nav-item">
-          <a className="nav-link" href="/">
-            Link
-          </a>
+          <button className="nav-link text-primary" onClick={()=> dispatch(getItemsByType("burgers"))}>
+            Бургери
+          </button>
+        </li> 
+        <li className="nav-item">
+          <button className="nav-link text-primary" onClick={()=> dispatch(getItemsByType("drinks"))}>
+            Напої
+          </button>
         </li>
       </ul>
       {/* <Navbar/> */}

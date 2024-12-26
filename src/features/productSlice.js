@@ -32,6 +32,18 @@ const productSlice = createSlice({
       .addCase(getAllItems.rejected, (state, action) => {
         state.status = "failed";
         state.error = action.payload; // Save the error
+      })
+      .addCase(getItemsByType.pending, (state) => {
+        state.status = "loading";
+        state.error = null;
+      })
+      .addCase(getItemsByType.fulfilled, (state, action) => {
+        state.status = "succeeded";
+        state.items = action.payload; // Clear cart on successful order placement
+      })
+      .addCase(getItemsByType.rejected, (state, action) => {
+        state.status = "failed";
+        state.error = action.payload; // Save the error
       });
   },
 });
@@ -55,7 +67,33 @@ export const getAllItems = createAsyncThunk(
         });
       console.log(response);
 
-      return response.data; //TODO: fix dispatch func to fetch products
+      return response.data; 
+    } catch (error) {
+      console.error("Failed to fetch items", error);
+    }
+  }
+);
+
+export const getItemsByType = createAsyncThunk(
+  "product/getByType",
+  async (type, { getState, dispatch }) => {
+    try {
+      // const { product: state } = getState();
+
+      const response = await axios
+        .get(`https://localhost:7048/api/Item/${type}`, {
+          headers: {
+            "Content-Type": "application/json",
+          },
+          withCredentials: true,
+        })
+
+        .catch((error) => {
+          console.error("Error fetching data", error);
+        });
+      console.log(response);
+
+      return response.data; 
     } catch (error) {
       console.error("Failed to fetch items", error);
     }
