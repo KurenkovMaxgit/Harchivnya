@@ -60,7 +60,7 @@ const Account = () => {
                     Змінити пароль
                   </div>
                 </div>
-                <div className="row">
+                <div className="row mx-auto">
 
                 <div className="mx-auto col-6 pt-3">
                   <div

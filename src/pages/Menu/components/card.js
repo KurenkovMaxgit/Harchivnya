@@ -6,7 +6,7 @@ function Card(props) {
   const dispatch = useDispatch();
 
   return (
-    <div className="card border border-1 border-black pt-3">
+    <div className="card border border-1 border-black">
       <img src={props.img} className="card-img-top" alt="product" />
       <div className="card-body">
         <h5 className="card-title">{props.title}</h5>

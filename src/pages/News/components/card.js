@@ -3,7 +3,7 @@ import React from "react";
 
 function Card(props) {
   return (
-    <div className="card border border-1 border-black pt-3">
+    <div className="card border border-1 border-black">
       <img src={props.img} className="card-img-top" alt="news_img" />
       <div className="card-body">
         <h5 className="card-title">{props.title}</h5>

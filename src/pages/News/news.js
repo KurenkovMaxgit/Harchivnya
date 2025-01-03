@@ -35,13 +35,6 @@ const News = () => {
             />
           </div>
         ))}
-        <div className="col mb-4">
-          <Card
-            img="images/Avatar Placeholder.svg"
-            title="Новина"
-            description="Дуже цікава новина"
-          />
-        </div>
       </div>
     </div>
   );
